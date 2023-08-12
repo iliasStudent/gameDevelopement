@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "gameDevelopment/1.0.0": {
         "dependencies": {
+          "Logic": "1.0.0",
           "MonoGame.Content.Builder.Task": "3.8.1.303",
           "MonoGame.Framework.WindowsDX": "3.8.1.303"
         },
@@ -1474,6 +1475,11 @@
           "System.Xml.XDocument": "4.0.11",
           "System.Xml.XPath": "4.0.1"
         }
+      },
+      "Logic/1.0.0": {
+        "runtime": {
+          "Logic.dll": {}
+        }
       }
     }
   },
@@ -2329,6 +2335,11 @@
       "sha512": "sha512-FLhdYJx4331oGovQypQ8JIw2kEmNzCsjVOVYY/16kZTUoquZG85oVn7yUhBE2OZt1yGPSXAL0HTEfzjlbNpM7Q==",
       "path": "system.xml.xpath.xdocument/4.0.1",
       "hashPath": "system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    },
+    "Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

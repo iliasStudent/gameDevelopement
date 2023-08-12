@@ -72,3 +72,5 @@ C:\Users\ILIAS\Desktop\gameDevelopement\gameDevelopment\obj\Debug\net6.0-windows
 C:\Users\ILIAS\Desktop\gameDevelopement\gameDevelopment\obj\Debug\net6.0-windows\gameDevelopment.pdb
 C:\Users\ILIAS\Desktop\gameDevelopement\gameDevelopment\obj\Debug\net6.0-windows\gameDevelopment.genruntimeconfig.cache
 C:\Users\ILIAS\Desktop\gameDevelopement\gameDevelopment\obj\Debug\net6.0-windows\ref\gameDevelopment.dll
+C:\Users\ILIAS\Desktop\gameDevelopement\gameDevelopment\bin\Debug\net6.0-windows\Logic.dll
+C:\Users\ILIAS\Desktop\gameDevelopement\gameDevelopment\bin\Debug\net6.0-windows\Logic.pdb
