@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -118,7 +117,6 @@ namespace Logic.Scenes
             if (Mouse.GetState().LeftButton == ButtonState.Pressed && currentState.LeftButton == ButtonState.Pressed &&
         lastMouseState.LeftButton == ButtonState.Released)
             {
-                Debug.WriteLine($"X:{hero.position.X}, Y:{hero.position.Y}");
                 hero.ChangeAnimation(AnimationsTypes.attack1);
             }
             else if (Mouse.GetState().RightButton == ButtonState.Pressed)

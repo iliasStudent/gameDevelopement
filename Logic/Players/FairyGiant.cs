@@ -53,7 +53,6 @@ namespace Logic.Players
                 invisibleTimer = 0;
             }
 
-            //changeAnimation(AnimationsTypes.attack1);
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1)
             {
                 Attack1(hero);
@@ -153,16 +152,16 @@ namespace Logic.Players
             var beginPoint = position.ToPoint();
             if (lookingLeft)
             {
-                beginPoint.X += 40 * 3;
-                beginPoint.Y += 38 * 3 - 1;
+                beginPoint.X += 120;
+                beginPoint.Y += 113;
             }
             else
             {
-                beginPoint.X += 40 * 3;
-                beginPoint.Y += 38 * 3 - 1;
+                beginPoint.X += 120;
+                beginPoint.Y += 113;
             }
 
-            return new Rectangle(beginPoint, new Point(20 * 3, 51 * 3));
+            return new Rectangle(beginPoint, new Point(60, 153));
         }
 
         public override Rectangle GetNextCollisionRectangle()
@@ -194,7 +193,7 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack1);
 
             const int Width = 160;
-            const int Height = 43 * 4;
+            const int Height = 172;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1 && currentAnimation.count == 6)
@@ -224,7 +223,7 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack2);
 
             const int Width = 160;
-            const int Height = 43 * 4;
+            const int Height = 172;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack2 && currentAnimation.count == 6)
@@ -257,17 +256,17 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack3);
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack3 && currentAnimation.count == 3)
             {
-                shoot();
+                Shoot();
             }
         }
 
-        public void shoot()
+        public void Shoot()
         {
             if (!attackCooldown)
             {
                 attackCooldown = true;
 
-                var hitbox = new Rectangle(40 * 3, 42 * 3, 24 * 3, 24 * 3);
+                var hitbox = new Rectangle(120, 126, 72, 72);
                 var center = GetCollisionRectangle().Center.ToVector2();
                 center -= hitbox.Center.ToVector2();
                 projectiles.Add(new Projectile(projectileInAirAnimation.Clone(), projectileHitAnimation.Clone(), lookingLeft, center, hitbox));

@@ -141,18 +141,18 @@ namespace Logic
         {
             var collisionRectangle = this.GetCollisionRectangle();
 
-            return new Rectangle((int)(collisionRectangle.X + Movement.Velocity.X), (int)(collisionRectangle.Y + Movement.Velocity.Y), 34 * 2, 54 * 2);
-            //return new Rectangle((int)(position.X + Movement.velocity.X), (int)(position.Y + Movement.velocity.Y), 34 * 2, 54 * 2);
+            return new Rectangle((int)(collisionRectangle.X + Movement.Velocity.X), (int)(collisionRectangle.Y + Movement.Velocity.Y), 68, 108);
+            
         }
 
         public Rectangle GetCollisionRectangle()
         {
             var beginPoint = GetTextureRectangle().Center;
             beginPoint.X += 10;
-            beginPoint.Y -= 4 * 2 + 1;
+            beginPoint.Y -= 9;
 
 
-            return new Rectangle(beginPoint, new Point(21 * 2, 54 * 2));
+            return new Rectangle(beginPoint, new Point(42, 108));
         }
 
         public Rectangle GetTextureRectangle()
@@ -213,11 +213,11 @@ namespace Logic
                 Rectangle attackCollsionRectangle;
                 if (lookingLeft)
                 {
-                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Left - 36 * 3, GetCollisionRectangle().Top + 10, 54 * 2, 36 * 2);
+                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Left - 36 * 3, GetCollisionRectangle().Top + 10, 108, 72);
                 }
                 else
                 {
-                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Right, GetCollisionRectangle().Top + 10, 54 * 2, 36 * 2);
+                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Right, GetCollisionRectangle().Top + 10, 108, 72);
                 }
 
                 foreach (var enemy in enemies)
@@ -237,11 +237,11 @@ namespace Logic
                 Rectangle attackCollsionRectangle;
                 if (lookingLeft)
                 {
-                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Left - 36 * 3, GetCollisionRectangle().Top + 10, 54 * 2, 36 * 2);
+                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Left - 36 * 3, GetCollisionRectangle().Top + 10, 108, 72);
                 }
                 else
                 {
-                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Right, GetCollisionRectangle().Top + 10, 54 * 2, 36 * 2);
+                    attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Right, GetCollisionRectangle().Top + 10, 108, 72);
                 }
 
                 foreach (var enemy in enemies)
@@ -259,7 +259,6 @@ namespace Logic
             if (!invisible)
             {
                 hitSound.Play();
-                Debug.WriteLine("hit");
                 stats.health -= damage;
                 invisible = true;
                 ChangeAnimation(AnimationsTypes.hit);

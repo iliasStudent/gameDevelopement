@@ -52,14 +52,14 @@ namespace Logic.Players
                 if (CollisionManager.Detection(hero.GetCollisionRectangle(), GetCollisionRectangle()))
                 {
                     hero.Hit(damage);
-                    hit();
+                    Hit();
                 }
 
                 foreach (var tile in tilemap.MiddleGround.Tiles)
                 {
                     if (CollisionManager.Detection(tile.GetCollisionRectangle(), GetCollisionRectangle()))
                     {
-                        hit();
+                        Hit();
                     }
                 }
             }
@@ -68,18 +68,18 @@ namespace Logic.Players
 
             if (currentAnimation.isFinished && isHit)
             {
-                remove();
+                Remove();
             }
         }
 
-        private void hit()
+        private void Hit()
         {
             isHit = true;
             speed = 0;
             currentAnimation = hitAnimation;
         }
 
-        public void remove()
+        public void Remove()
         {
             isRemove = true;
         }

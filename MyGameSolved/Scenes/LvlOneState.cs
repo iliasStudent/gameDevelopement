@@ -133,7 +133,6 @@ namespace Logic.Scenes
 
             if (Keyboard.GetState().IsKeyDown(Keys.L))
             {
-                Debug.WriteLine("Tiledmap keydown L executed");
                 TileFactory.Save(GraphicsDevice);
                 using (FileStream fs = File.Create(@"ExportedTilemapData.txt"))
                 {
@@ -180,8 +179,6 @@ namespace Logic.Scenes
             }
 
             monsters.RemoveAll(x => x.isDead);
-
-            Debug.WriteLine($"X:{hero.position.X}, Y:{hero.position.Y}");
         }
 
         public override void Draw(GameTime gameTime)

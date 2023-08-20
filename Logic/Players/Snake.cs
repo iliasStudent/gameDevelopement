@@ -167,8 +167,7 @@ namespace Logic.Players
             var beginPoint = position.ToPoint();
             beginPoint.X += 55;
             beginPoint.Y += 75;
-            return new Rectangle(beginPoint, new Point(15 * 2, 30 * 2));
-            //return new Rectangle((int)position.X, (int)position.Y, (int)currentAnimation.bounds.X, (int)currentAnimation.bounds.Y);
+            return new Rectangle(beginPoint, new Point(30, 60));
         }
 
         public override Rectangle GetNextCollisionRectangle()
@@ -195,13 +194,11 @@ namespace Logic.Players
         }
 
         public override void Attack1(Hero hero)
-        {
-            Debug.WriteLine("testAttack1: " );
-            Debug.WriteLine($"THIS IS 1: {currentAnimation.AnimatieNaam} == {AnimationsTypes.attack1} && {currentAnimation.count} == 6");
+        {            
             ChangeAnimation(AnimationsTypes.attack1);
 
-            const int Width = 34 * 2;
-            const int Height = 66 * 2;
+            const int Width = 68;
+            const int Height = 132;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1 && currentAnimation.count == 3)
@@ -219,7 +216,6 @@ namespace Logic.Players
                 {
                     attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Right, GetCollisionRectangle().Top + yOffset, Width, Height);
                 }
-                Debug.WriteLine("test: " + attackCollsionRectangle.ToString());
                 if (CollisionManager.Detection(hero.GetCollisionRectangle(), attackCollsionRectangle))
                 {
                     hero.Hit(stats.damage);
@@ -231,8 +227,8 @@ namespace Logic.Players
         {
             ChangeAnimation(AnimationsTypes.attack2);
             
-            const int Width = 34 * 2;
-            const int Height = 66 * 2;
+            const int Width = 68;
+            const int Height = 132;
             const int yOffset = 0;
             
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack2 && currentAnimation.count == 3)
@@ -249,7 +245,6 @@ namespace Logic.Players
                 {
                     attackCollsionRectangle = new Rectangle(GetCollisionRectangle().Right, GetCollisionRectangle().Top + yOffset, Width, Height);
                 }
-                Debug.WriteLine("test2: " + attackCollsionRectangle.ToString());
                 if (CollisionManager.Detection(hero.GetCollisionRectangle(), attackCollsionRectangle))
                 {
                     hero.Hit(stats.damage + 1);
@@ -265,11 +260,11 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack3);
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack3 && currentAnimation.count == 7)
             {
-                shoot();
+                Shoot();
             }
         }
 
-        public void shoot()
+        public void Shoot()
         {
             if (!attackCooldown)
             {

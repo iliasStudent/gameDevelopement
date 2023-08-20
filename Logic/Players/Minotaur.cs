@@ -163,7 +163,7 @@ namespace Logic.Players
             var beginPoint = position.ToPoint();
             beginPoint.X += 60;
             beginPoint.Y += 65;
-            return new Rectangle(beginPoint, new Point(33 * 2, 36 * 2));
+            return new Rectangle(beginPoint, new Point(66, 72));
         }
 
         public override Rectangle GetNextCollisionRectangle()
@@ -194,8 +194,8 @@ namespace Logic.Players
 
             ChangeAnimation(AnimationsTypes.attack1);
 
-            const int Width = 25 * 2;
-            const int Height = 36 * 2;
+            const int Width = 50;
+            const int Height = 72;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1 && currentAnimation.count == 6)
@@ -224,8 +224,8 @@ namespace Logic.Players
         {
             ChangeAnimation(AnimationsTypes.attack2);
 
-            const int Width = 50 * 2;
-            const int Height = 29 * 2;
+            const int Width = 100;
+            const int Height = 58;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack2 && currentAnimation.count == 6)
@@ -258,11 +258,11 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack3);
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack3 && currentAnimation.count == 10)
             {
-                shoot();
+                Shoot();
             }
         }
 
-        public void shoot()
+        public void Shoot()
         {
             if (!attackCooldown)
             {
@@ -270,7 +270,7 @@ namespace Logic.Players
 
                 var center = GetCollisionRectangle().Center.ToVector2();
                 center -= new Vector2(projectileInAirAnimation.bounds.X, projectileInAirAnimation.bounds.Y);
-                projectiles.Add(new Projectile(projectileInAirAnimation.Clone(), projectileHitAnimation.Clone(), lookingLeft, center, new Rectangle(48*2, 48*2, 9*2, 9*2)));
+                projectiles.Add(new Projectile(projectileInAirAnimation.Clone(), projectileHitAnimation.Clone(), lookingLeft, center, new Rectangle(98, 98, 18, 18)));
             }
         }
 

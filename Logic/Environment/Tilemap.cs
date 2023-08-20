@@ -35,7 +35,6 @@ namespace Logic.Environment
 
         public void addTiles(Texture2D map, GraphicsDevice graphicsDevice, int layer = 0)
         {
-            Debug.WriteLine("Beginning " + layer);
             for (int i = 0; i < map.Width / 16; i++)
             {
                 for (int j = 0; j < map.Height / 16; j++)
@@ -45,13 +44,8 @@ namespace Logic.Environment
                     {
                         addTile(texture, new Vector2(i, j), layer);
                     }
-
-                    
-                    Debug.WriteLine($"{layer}: {(i* (map.Height / 16)) +j}/{(map.Width/16)* (map.Height/16)}");
-                    
                 }
             }
-            Debug.WriteLine("Finised " + layer);
         }
 
         public void addTile(Texture2D texture, Vector2 position, int layer = 0)

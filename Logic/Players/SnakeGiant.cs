@@ -53,17 +53,17 @@ namespace Logic.Players
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1)
             {
-                attack1(hero);
+                Attack1(hero);
             }
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack2)
             {
-                attack2(hero);
+                Attack2(hero);
             }
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack3)
             {
-                attack3(hero);
+                Attack3(hero);
             }
 
             foreach (var projectile in projectiles)
@@ -108,16 +108,16 @@ namespace Logic.Players
                         Random rand = new Random();
                         if (rand.Next(0, 2) == 1)
                         {
-                            attack1(hero);
+                            Attack1(hero);
                         }
                         else
                         {
-                            attack2(hero);
+                            Attack2(hero);
                         }
                     }
                     else if (CollisionManager.Detection(hero.GetCollisionRectangle(), GetCollisionRectangle().Center, 1000, 50) && currentAnimation.AnimatieNaam.canMove())
                     {
-                        attack3(hero);
+                        Attack3(hero);
                     }
                 }
             }
@@ -159,7 +159,7 @@ namespace Logic.Players
                 beginPoint.Y += 110;
             }
 
-            return new Rectangle(beginPoint, new Point(23 * 4, 37 * 4));
+            return new Rectangle(beginPoint, new Point(92, 148));
         }
 
         public override Rectangle GetNextCollisionRectangle()
@@ -185,12 +185,12 @@ namespace Logic.Players
             }
         }
 
-        public void attack1(Hero hero)
+        public void Attack1(Hero hero)
         {
             ChangeAnimation(AnimationsTypes.attack1);
 
-            const int Width = 47 * 2;
-            const int Height = 43 * 2;
+            const int Width = 94;
+            const int Height = 86;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1 && currentAnimation.count == 3)
@@ -215,12 +215,12 @@ namespace Logic.Players
             }
         }
 
-        public void attack2(Hero hero)
+        public void Attack2(Hero hero)
         {
             ChangeAnimation(AnimationsTypes.attack2);
 
-            const int Width = 53 * 2;
-            const int Height = 79 * 2;
+            const int Width = 106;
+            const int Height = 158;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack2 && currentAnimation.count == 3)
@@ -245,7 +245,7 @@ namespace Logic.Players
             }
         }
 
-        public void attack3(Hero hero)
+        public void Attack3(Hero hero)
         {
             Random random = new Random();
             attackCooldownTimer = 2000 + (random.Next(0, 5) * 500);
@@ -253,18 +253,18 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack3);
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack3 && currentAnimation.count == 10)
             {
-                shoot();
+                Shoot();
             }
         }
 
-        public void shoot()
+        public void Shoot()
         {
             if (!attackCooldown)
             {
                 attackCooldown = true;
                 
 
-                var hitbox = new Rectangle(44 * 2, 44 * 2, 16 * 2, 16);
+                var hitbox = new Rectangle(88, 88, 32, 16);
                 var center = GetCollisionRectangle().Center.ToVector2();
                 center -= hitbox.Center.ToVector2();
                 projectiles.Add(new Projectile(projectileInAirAnimation.Clone(), projectileHitAnimation.Clone(), lookingLeft, center, hitbox));

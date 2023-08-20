@@ -164,16 +164,16 @@ namespace Logic.Players
             var beginPoint = position.ToPoint();
             if (lookingLeft)
             {
-                beginPoint.X += 51 * 1;
-                beginPoint.Y += 51 * 2 - 1;
+                beginPoint.X += 51;
+                beginPoint.Y += 101;
             }
             else
             {
-                beginPoint.X += 60 * 2;
-                beginPoint.Y += 50 * 2 - 1;
+                beginPoint.X += 120;
+                beginPoint.Y += 99;
             }
 
-            return new Rectangle(beginPoint, new Point(36 * 2, 51 * 2));
+            return new Rectangle(beginPoint, new Point(72, 102));
             //return new Rectangle((int)position.X, (int)position.Y, (int)currentAnimation.bounds.X, (int)currentAnimation.bounds.Y);
         }
 
@@ -205,8 +205,8 @@ namespace Logic.Players
 
             ChangeAnimation(AnimationsTypes.attack1);
 
-            const int Width = 47 * 2;
-            const int Height = 43 * 2;
+            const int Width = 94;
+            const int Height = 86;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack1 && currentAnimation.count == 6)
@@ -235,8 +235,8 @@ namespace Logic.Players
         {
             ChangeAnimation(AnimationsTypes.attack2);
 
-            const int Width = 53 * 2;
-            const int Height = 79 * 2;
+            const int Width = 106;
+            const int Height = 158;
             const int yOffset = 0;
 
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack2 && currentAnimation.count == 6)
