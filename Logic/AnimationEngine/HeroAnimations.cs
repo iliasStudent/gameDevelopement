@@ -10,8 +10,8 @@ namespace Logic.AnimationEngine
 {
     public class HeroAnimations
     {
-        public static int _width { get; set; } = 62;
-        public static int _height { get; set; } = 86;
+        public static int _width { get; set; } = 32;
+        public static int _height { get; set; } = 36;
 
         public static List<Animation> AllAnimation(ContentManager content)
         {
@@ -38,7 +38,7 @@ namespace Logic.AnimationEngine
             animation.AnimatieNaam = AnimationsTypes.idle;
 
             // Aantal motion in een afbeelding
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 6; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -54,7 +54,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.run;
 
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 8; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -69,7 +69,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.fall;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 2; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -85,7 +85,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.jump;
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 2; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -101,7 +101,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.attack2;
            
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 9; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -117,7 +117,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.attack1;
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -133,7 +133,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.hit;
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 4; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
@@ -149,7 +149,7 @@ namespace Logic.AnimationEngine
 
             animation.AnimatieNaam = AnimationsTypes.death;
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 7; i++)
             {
                 animation.AddFrame(new AnimationFrame(new Rectangle(_width * i, 0, _width, _height)));
             }
