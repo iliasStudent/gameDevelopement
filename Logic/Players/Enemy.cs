@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Logic.Players
 {
@@ -244,7 +243,7 @@ namespace Logic.Players
         public abstract void HitSoundMet();
         public void EndOfAnimation()
         {
-            if (this.currentAnimation.isFinished)
+            if (this.currentAnimation.IsFinished)
             {
                 switch (this.currentAnimation.AnimatieNaam)
                 {

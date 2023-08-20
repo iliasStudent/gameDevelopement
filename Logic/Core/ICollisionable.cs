@@ -1,8 +1,7 @@
 ﻿using Logic.Core;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Logic.Characters
 {

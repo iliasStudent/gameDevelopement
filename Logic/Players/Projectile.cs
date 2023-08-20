@@ -66,7 +66,7 @@ namespace Logic.Players
 
             currentAnimation.Update(gameTime);
 
-            if (currentAnimation.isFinished && isHit)
+            if (currentAnimation.IsFinished && isHit)
             {
                 Remove();
             }

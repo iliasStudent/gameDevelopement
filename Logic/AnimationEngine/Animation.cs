@@ -35,7 +35,7 @@ namespace Logic.AnimationEngine
 
         public Vector2 bounds { get; set; }
 
-        public bool isFinished { get; set; }
+        public bool IsFinished { get; set; }
 
         public Animation(Texture2D texture)
         {
@@ -44,7 +44,7 @@ namespace Logic.AnimationEngine
             this.offset = new Vector2();
 
             count = 0;
-            isFinished = false;
+            IsFinished = false;
         }
 
         public Animation(Animation animatie)
@@ -55,7 +55,7 @@ namespace Logic.AnimationEngine
             this.currentFrame = animatie.currentFrame;
             this.ElapsedGameTime = animatie.ElapsedGameTime;
             this.frames = animatie.frames;
-            this.isFinished = animatie.isFinished;
+            this.IsFinished = animatie.IsFinished;
             this.offset = animatie.offset;
             this.texture = animatie.texture;
         }
@@ -81,7 +81,7 @@ namespace Logic.AnimationEngine
             if (count > frames.Count - 1)
             {
                 count = 0;
-                isFinished = true;
+                IsFinished = true;
             }
 
             currentFrame = frames[count];
@@ -101,7 +101,7 @@ namespace Logic.AnimationEngine
             if (count > frames.Count - 1)
             {
                 count = 0;
-                isFinished = true;
+                IsFinished = true;
             }
 
             currentFrame = frames[count];
@@ -110,7 +110,7 @@ namespace Logic.AnimationEngine
         public void Reset()
         {
             count = 0;
-            isFinished = false;
+            IsFinished = false;
         }
 
         public Animation Clone()
