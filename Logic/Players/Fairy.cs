@@ -174,7 +174,6 @@ namespace Logic.Players
             }
 
             return new Rectangle(beginPoint, new Point(72, 102));
-            //return new Rectangle((int)position.X, (int)position.Y, (int)currentAnimation.bounds.X, (int)currentAnimation.bounds.Y);
         }
 
         public override Rectangle GetNextCollisionRectangle()
@@ -269,11 +268,11 @@ namespace Logic.Players
             ChangeAnimation(AnimationsTypes.attack3);
             if (currentAnimation.AnimatieNaam == AnimationsTypes.attack3 && currentAnimation.count == 3)
             {
-                shoot();
+                Shoot();
             }
         }
 
-        public void shoot()
+        public void Shoot()
         {
             if (!attackCooldown)
             {
